@@ -56,11 +56,11 @@ $wgEnotifWatchlist = true; # UPO
 $wgEmailAuthentication = true;
 
 ## Database settings
-$wgDBtype = $_ENV['WG_DB_TYPE'];
-$wgDBserver = $_ENV['WG_DB_SERVER'];
-$wgDBname = $_ENV['WG_DB_NAME'];
-$wgDBuser = $_ENV['WG_DB_USER'];
-$wgDBpassword = $_ENV['WG_DB_PASSWORD'];
+$wgDBtype = getenv('WG_DB_TYPE');
+$wgDBserver = getenv('WG_DB_SERVER');
+$wgDBname = getenv('WG_DB_NAME');
+$wgDBuser = getenv('WG_DB_USER');
+$wgDBpassword = getenv('WG_DB_PASSWORD');
 
 # MySQL specific settings
 $wgDBprefix = "";
@@ -113,14 +113,14 @@ $wgLocaltimezone = "America/Sao_Paulo";
 # Site language code, should be one of the list in ./languages/data/Names.php
 $wgLanguageCode = "pt-br";
 
-$wgSecretKey = $_ENV['WG_SECRET_KEY'];
+$wgSecretKey = getenv('WG_SECRET_KEY');
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = $_ENV['WG_UPGRADE_KEY'];
+$wgUpgradeKey = getenv('WG_UPGRADE_KEY');
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -307,13 +307,13 @@ $wgAllowSlowParserFunctions = true;
 
 # Configuracoes de e-mail
 $wgSMTP = array(
-	'host' => $_ENV['WG_SMTP_HOST'],
-	'IDHost' => $_ENV['WG_SMTP_IDHOST'],
-	'localhost' => $_ENV['WG_SMTP_LOCALHOST'],
-	'port' => $_ENV['WG_SMTP_PORT'],
-	'username' => $_ENV['WG_SMTP_USERNAME'],
-	'password' => $_ENV['WG_SMTP_PASSWORD'],
-	'auth' => $_ENV['WG_SMTP_AUTH'],
+	'host' => getenv('WG_SMTP_HOST'),
+	'IDHost' => getenv('WG_SMTP_IDHOST'),
+	'localhost' => getenv('WG_SMTP_LOCALHOST'),
+	'port' => getenv('WG_SMTP_PORT'),
+	'username' => getenv('WG_SMTP_USERNAME'),
+	'password' => getenv('WG_SMTP_PASSWORD'),
+	'auth' => getenv('WG_SMTP_AUTH'),
 );
 
 # Tornar email obrigatorio
