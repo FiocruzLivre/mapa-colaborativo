@@ -1,0 +1,4 @@
+/skins
+/extensions
+*.min.css
+.env
