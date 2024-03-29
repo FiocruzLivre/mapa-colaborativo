@@ -39,7 +39,8 @@
         "mediawiki/geo-data": "^1.41",
         "mediawiki/head-script": "^1.1",
         "mediawiki/page-forms": "^5.7",
-        "mediawiki/labeled-section-transclusion": "^1.41"
+        "mediawiki/labeled-section-transclusion": "^1.41",
+        "mediawiki/vector-skin": "^1.32"
     },
     "repositories": [
         {
