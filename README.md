@@ -8,5 +8,7 @@ cd mediawiki
 mkdir volumes
 git clone git@github.com:LibreCodeCoop/mapa-colaborativo.git volumes/src
 ln -s volumes/src/docker-compose.override.yml docker-compose.override.yml
-docker compose up
+docker compose up -d
+docker compose exec mediawiki bash
+composer i --no-dev
 ```
