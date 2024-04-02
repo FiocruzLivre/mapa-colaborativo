@@ -259,12 +259,12 @@ wfLoadSkin( 'chameleon' );
 $wgDefaultSkin = 'chameleon';
 
 // Definir layout Chameleon com navegação fixa para todo o site
-$egChameleonLayoutFile= __DIR__ . '/skins/chameleon/layouts/fixedhead.xml';
+$egChameleonLayoutFile= '/var/www/mediawiki/skins/chameleon/layouts/fixedhead.xml';
 
 // Custom Chameleon bootstrap theme
-$egChameleonThemeFile = __DIR__ . '/themes/journal/_variables.scss';
+$egChameleonThemeFile = '/var/www/mediawiki/themes/journal/_variables.scss';
 $egChameleonExternalStyleModules = [
-	__DIR__ . '/themes/journal/_bootswatch.scss' => 'afterMain',
+	'/var/www/mediawiki/themes/journal/_bootswatch.scss' => 'afterMain',
 
 ];
 
