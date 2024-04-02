@@ -40,7 +40,12 @@
         "mediawiki/head-script": "^1.1",
         "mediawiki/page-forms": "^5.7",
         "mediawiki/labeled-section-transclusion": "^1.41",
-        "mediawiki/vector-skin": "^1.32"
+        "mediawiki/vector-skin": "^1.32",
+        "mediawiki/semantic-media-wiki": "^4.1",
+        "mediawiki/category-tree": "^1.41",
+        "mediawiki/cite": "^1.41",
+        "mediawiki/cite-this-page": "^1.41",
+        "mediawiki/code-editor": "^1.41"
     },
     "repositories": [
         {
@@ -265,6 +270,58 @@
                     "type": "git",
                     "url": "https://github.com/wikimedia/mediawiki-extensions-LabeledSectionTransclusion",
                     "reference": "REL1_41"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mediawiki/category-tree",
+                "type": "mediawiki-extension",
+                "version": "1.41",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/wikimedia/mediawiki-extensions-CategoryTree",
+                    "reference": "wmf/1.41.0-wmf.30"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mediawiki/cite",
+                "type": "mediawiki-extension",
+                "version": "1.41",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/wikimedia/mediawiki-extensions-Cite",
+                    "reference": "wmf/1.41.0-wmf.30"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mediawiki/cite-this-page",
+                "type": "mediawiki-extension",
+                "version": "1.41",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/wikimedia/mediawiki-extensions-CiteThisPage",
+                    "reference": "wmf/1.41.0-wmf.30"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mediawiki/code-editor",
+                "type": "mediawiki-extension",
+                "version": "1.41",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/wikimedia/mediawiki-extensions-CodeEditor",
+                    "reference": "wmf/1.41.0-wmf.30"
                 }
             }
         }
