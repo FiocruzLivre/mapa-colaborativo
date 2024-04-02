@@ -31,7 +31,7 @@ $wgMetaNamespace = "Mapa_movimentos";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://localhost";
+$wgServer = getenv('WG_SERVER');
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
