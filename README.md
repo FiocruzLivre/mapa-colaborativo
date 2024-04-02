@@ -11,4 +11,5 @@ ln -s volumes/src/docker-compose.override.yml docker-compose.override.yml
 docker compose up -d
 docker compose exec mediawiki bash
 composer i --no-dev
+php maintenance/update.php --quick
 ```
