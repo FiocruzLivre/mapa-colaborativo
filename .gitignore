@@ -1,4 +1,4 @@
-/skins
-/extensions
+/mediawiki/skins
+/mediawiki/extensions
 *.min.css
 .env

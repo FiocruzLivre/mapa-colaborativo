@@ -1,9 +1,0 @@
-services:
-  mediawiki:
-    volumes:
-      - ./volumes/src/extensions:/var/www/mediawiki/extensions
-      - ./volumes/src/skins:/var/www/mediawiki/skins
-      - ./volumes/src/themes:/var/www/mediawiki/themes
-      - ./volumes/src/composer.local.json:/var/www/mediawiki/composer.local.json
-      - ./volumes/src/composer.lock:/var/www/mediawiki/composer.lock
-      - ./volumes/src/LocalSettings.php:/var/www/mediawiki/LocalSettings.php
