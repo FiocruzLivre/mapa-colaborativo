@@ -3,11 +3,10 @@
 ## Instalação
 
 ```bash
-git clone https://github.com/LibreCodeCoop/mediawiki-development/ mediakiwi
-cd mediawiki
 mkdir volumes
+git clone https://github.com/LibreCodeCoop/mediawiki-development/ volumes/mediakiwi
 git clone git@github.com:LibreCodeCoop/mapa-colaborativo.git volumes/src
-ln -s volumes/src/docker-compose.override.yml docker-compose.override.yml
+git -C volumes/mediawiki submodule update --init --recursive
 docker compose up -d
 docker compose exec mediawiki bash
 composer i --no-dev
