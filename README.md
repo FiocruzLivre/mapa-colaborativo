@@ -7,8 +7,8 @@
 3. Execute os comandos que seguem:
     ```bash
     mkdir volumes
-    git clone https://github.com/LibreCodeCoop/mediawiki-development/ volumes/mediakiwi
-    git clone git@github.com:LibreCodeCoop/mapa-colaborativo.git volumes/src
+    git clone https://github.com/LibreCodeCoop/mediawiki-development/ volumes/mediawiki
+    git clone https://github.com/LibreCodeCoop/mapa-colaborativo.git volumes/src
     git -C volumes/mediawiki submodule update --init --recursive
     docker compose up -d
     docker compose exec chown -R www-data:www-data /var/www/mediawiki
