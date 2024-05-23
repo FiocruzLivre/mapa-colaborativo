@@ -1,0 +1,17 @@
+diff --git a/includes/parser/Parser.php b/includes/parser/Parser.php
+index f1632f4..c3996ac 100644
+--- a/includes/parser/Parser.php
++++ b/includes/parser/Parser.php
+@@ -1049,7 +1049,11 @@ class Parser {
+ 	 * @since 1.14
+ 	 */
+ 	public function getOutput() {
+-		return $this->mOutput;
++		try {
++			return $this->mOutput;
++		} catch (\Throwable $th) {
++			return '';
++		}
+ 	}
+ 
+ 	/**
