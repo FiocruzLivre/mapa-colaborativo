@@ -11,6 +11,6 @@
 7. Caso necessário, crie o arquivo `.env` ou utilize um existente.
 8. Clone o projeto do [MediaWiki](https://www.mediawiki.org/) no subdiretório _volumes/mediawiki_: `git clone  --progress --single-branch --depth 1 --branch 1.41.0 --recurse-submodules -j 4 https://gerrit.wikimedia.org/r/mediawiki/core.git volumes/mediawiki`
 9. Inicie o projeto: `docker compose up -d`
-10. Acesse o conteiner do projeto: `docker compose exec mediawiki bash`
+10. Acesse o conteiner do projeto: `docker compose exec -u www-data mediawiki bash`
 11. Execute a instalação das extensões: `composer update --no-dev -o`
 12. Execute a atualização do banco: `php maintenance/update.php --quick`
