@@ -14,3 +14,4 @@
 10. Acesse o conteiner do projeto: `docker compose exec mediawiki bash`
 11. Execute a instalação das extensões: `composer update --no-dev -o`
 12. Execute a atualização do banco: `php maintenance/update.php --quick`
+13. Se tiver algum patch a aplicar, execute: `cd volumes/mediawiki;git apply ../src/patch-01.diff`
