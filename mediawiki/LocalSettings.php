@@ -202,8 +202,8 @@ $wgVisualEditorAvailableNamespaces = array(
 );
 
 # Semantic Wiki
-// wfLoadExtension( 'SemanticMediaWiki' );
-// enableSemantics( 'wikifavelas.com.br' );
+wfLoadExtension( 'SemanticMediaWiki' );
+enableSemantics( 'wikifavelas.com.br' );
 
 
 #Extensões extras
@@ -216,7 +216,7 @@ wfLoadExtension( 'EmbedVideo' );
 wfLoadExtension( 'InteractiveTimeline' );
 wfLoadExtension( 'JsonConfig' );
 wfLoadExtension( 'LabeledSectionTransclusion' );
-wfLoadExtension( 'PDFEmbed' );
+wfLoadExtension( 'PDFembed' );
 wfLoadExtension( 'Popups' );
 wfLoadExtension( 'RandomPages' );
 wfLoadExtension( 'RandomSelection' );
@@ -227,7 +227,7 @@ wfLoadExtension( 'ArticleRatings' );
 wfLoadExtension( 'Disambiguator' );
 
 #Easy Timeline
-wfLoadExtension( 'timeline' );
+wfLoadExtension( 'Timeline' );
 $wgTimelineFontFile = 'ascii';
 
 #Bootstrap
@@ -308,7 +308,7 @@ $wgRestrictDisplayTitle = false;
 $wgExternalLinkTarget = '_blank';
 
 #DynamicPageList
-wfLoadExtension( 'intersection' );
+wfLoadExtension( 'Intersection' );
 # Configuration variables. Warning: These use DLP instead of DPL
 # for historical reasons (pretend Dynamic list of pages)
 $wgDLPmaxCategories = 6;                // Maximum number of categories to look for
