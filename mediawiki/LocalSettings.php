@@ -181,11 +181,6 @@ wfLoadExtension( 'EmbedVideo' );
 wfLoadExtension( 'FontAwesome' );
 wfLoadExtension( 'GeoData' );
 
-# Semantic Wiki
-wfLoadExtension( 'SemanticMediaWiki' );
-enableSemantics( 'movimentossociaisemsaude.net.br' );
-// wfLoadExtension( 'SemanticCompoundQueries' );
-#wfLoadExtension( 'SemanticBreadcrumbLinks' );
 wfLoadExtension( 'PageForms' );
 
 
