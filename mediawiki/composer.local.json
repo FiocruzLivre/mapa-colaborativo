@@ -41,11 +41,12 @@
         "mediawiki/page-forms": "^5.7",
         "mediawiki/labeled-section-transclusion": "^1.41",
         "mediawiki/vector-skin": "^1.32",
-        "mediawiki/semantic-media-wiki": "^4.1",
         "mediawiki/category-tree": "^1.41",
         "mediawiki/cite": "^1.41",
         "mediawiki/cite-this-page": "^1.41",
-        "mediawiki/code-editor": "^1.41"
+        "mediawiki/code-editor": "^1.41",
+        "mediawiki/no-title": "^1.41",
+        "mediawiki/css": "^1.41"
     },
     "repositories": [
         {
@@ -322,6 +323,32 @@
                     "type": "git",
                     "url": "https://github.com/wikimedia/mediawiki-extensions-CodeEditor",
                     "reference": "wmf/1.41.0-wmf.30"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mediawiki/no-title",
+                "type": "mediawiki-extension",
+                "version": "1.41",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/wikimedia/mediawiki-extensions-NoTitle",
+                    "reference": "REL1_41"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mediawiki/css",
+                "type": "mediawiki-extension",
+                "version": "1.41",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/wikimedia/mediawiki-extensions-CSS",
+                    "reference": "REL1_41"
                 }
             }
         }

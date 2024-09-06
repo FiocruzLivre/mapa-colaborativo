@@ -21,7 +21,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 # $wgDisableOutputCompression = true;
 
 $wgSitename = "Mapa movimentos";
-$wgMetaNamespace = "Mapa_movimentos";
+$wgMetaNamespace = "MapaMovSaude";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -39,7 +39,7 @@ $wgResourceBasePath = $wgScriptPath;
 ## The URL paths to the logo.  Make sure you change this from the default,
 ## or else you'll overwrite your logo when you upgrade!
 $wgLogos = [
-	'1x' => "$wgResourceBasePath/themes/images/logo.png",
+	'1x' => "$wgResourceBasePath/themes/images/logo_white.png",
 	'icon' => "$wgResourceBasePath/resources/assets/change-your-logo-icon.svg",
 ];
 
@@ -49,7 +49,6 @@ $wgEnableEmail = true;
 $wgEnableUserEmail = true; # UPO
 
 $wgEmergencyContact = "";
-$wgPasswordSender = "";
 
 $wgEnotifUserTalk = true; # UPO
 $wgEnotifWatchlist = true; # UPO
@@ -200,6 +199,9 @@ wfLoadExtension( 'UserExport' );
 wfLoadExtension( 'WikiCategoryTagCloud' );
 wfLoadExtension( 'WikiSEO' );
 
+wfLoadExtension( 'NoTitle' );
+$wgRestrictDisplayTitle = false;
+
 # Visual Editor
 wfLoadExtension( 'VisualEditor' );
 $wgGroupPermissions['user']['writeapi'] = true;
@@ -272,10 +274,10 @@ $egChameleonExternalStyleVariables = [
 	'$cmln-personal-tools-link-new' =>	'("color": #FFF, "hover-color": #FFF)',
 	'$cmln-navbar-logo-height' => '2.3rem',
 	'$component-active-bg' => '#F27405',
-	'$theme-colors' => '("primary": #62259c, "secondary": #6c757d, "success": #28a745, "info": #17a2b8, "warning": #ffc107, "danger": #dc3545, "light": #e9ecef, "dark": #343a40, "error": #dc3545, "darker": #ced4da)',
+	'$theme-colors' => '("primary": #62259c, "secondary": #6c757d, "success": #28a745, "info": #17a2b8, "warning": #ffc107, "danger": #dc3545, "light": #e9ecef, "dark": #1450AA, "error": #dc3545, "darker": #ced4da)',
 	'$cmln-link-formats' => "(new: ('color': #6E6E6E, 'hover-color': #FFA700 underline), stub: #f31d6c none #FF0089 underline,  extiw: #6B0CBC none #B607D6 underline, external:  #C7064E none #F7005C underline)",
-	'$navbar-light-color' => '#FF8112',
-	'$navbar-light-hover-color' => '#FFF',
+	'$navbar-light-color' => '#FFF',
+	'$navbar-light-hover-color' => '#ABBAF4',
 	'$navbar-light-active-color' => '#FFF',
 	'$enable-gradients' => '1',
 ];
@@ -304,12 +306,14 @@ $wgAllowSlowParserFunctions = true;
 $wgSMTP = array(
 	'host' => getenv('WG_SMTP_HOST'),
 	'IDHost' => getenv('WG_SMTP_IDHOST'),
-	'localhost' => getenv('WG_SMTP_LOCALHOST'),
 	'port' => getenv('WG_SMTP_PORT'),
+	'localhost' => getenv('WG_SMTP_LOCALHOST'),
 	'username' => getenv('WG_SMTP_USERNAME'),
 	'password' => getenv('WG_SMTP_PASSWORD'),
-	'auth' => getenv('WG_SMTP_AUTH'),
+	'auth' => (bool) getenv('WG_SMTP_AUTH'),
 );
+// E-mail do FROM para envio de emails
+$wgPasswordSender = getenv('WG_SMTP_USERNAME');
 
 # Tornar email obrigatorio
 $wgEmailConfirmToEdit = true;
@@ -329,6 +333,8 @@ $wgAccountCreationThrottle = 40;
 
 # Configuracoes do UserExport
 $wgGroupPermissions['sysop']['userexport'] = true;
+# https://www.mediawiki.org/wiki/Manual:Renameuser
+$wgGroupPermissions['sysop']['renameuser'] = true;
 
 
 # For SVG image support
@@ -365,11 +371,19 @@ $wgIframe['server']['fiocruz'] = [ 'scheme' => 'https', 'domain' => 'faleconosco
 $wgIframe['server']['openstreetmap'] = [ 'scheme' => 'https', 'domain' => 'www.openstreetmap.org' ];
 $wgIframe['server']['googledocs'] = [ 'scheme' => 'https',  'domain' => 'docs.google.com'];
 $wgIframe['server']['arcgis'] = [ 'scheme' => 'https',  'domain' => 'www.arcgis.com'];
+$wgIframe['server']['mss'] = [ 'scheme' => 'https',  'domain' => 'movimentossociaisemsaude.net.br'];
 #$wgIframe['server']['mailchimp'] = [ 'scheme' => 'https', 'domain' => 'mailchi.mp' ];
 
 # Kartographer
 wfLoadExtension( 'Kartographer' );
 $wgKartographerMapServer = 'https://tile.openstreetmap.org';
+$wgKartographerMapServer = 'https://tileserver.map.as';
+$wgKartographerStyles = ['osm'];
+$wgKartographerDfltStyle = '';
+$wgKartographerSimpleStyleMarkers = false;
+
+# CSS
+wfLoadExtension( 'Css' );
 
 # PopUps
 wfLoadExtension( 'Popups' );
@@ -421,7 +435,7 @@ wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 wfLoadExtension( 'AbuseFilter' );
 
 # Para ativar o Modo Debug use true
-$wgShowDebug = true;
-$wgDevelopmentWarnings = true;
-$wgShowExceptionDetails = true;
+$wgShowDebug = false;
+$wgDevelopmentWarnings = false;
+$wgShowExceptionDetails = false;
 
